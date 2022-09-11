@@ -2,13 +2,17 @@ from os.path import join, dirname, realpath
 from flask import Flask, flash, request, render_template, redirect, url_for
 from werkzeug.utils import secure_filename
 
+from celery_worker import do_image_512
+
+
 ALLOWED_EXTENSIONS = {'jpg', 'jpeg'}
+UPLOAD_FOLDER = join(dirname(realpath(__file__)), 'static/uploads')
+SECRET_KEY = "super_secret_key"
 
 app = Flask(__name__)
-app.config['FLASK_DEBUG'] = 1
-app.config['UPLOAD_FOLDER'] = join(dirname(realpath(__file__)), 'static/uploads')
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_PATH'] = 5242880
-app.secret_key = "super_secret_key"
+app.secret_key = SECRET_KEY
 
 
 def allowed_file(filename):
