@@ -1,0 +1,9 @@
+.content{
+    position: fixed;
+    top: 10%;
+    left: 30%;
+    text-align: center;
+}
+.content form{
+    margin: 20%;
+}
