@@ -2,8 +2,16 @@
     position: fixed;
     top: 10%;
     left: 30%;
+    margin-right: 30%;
     text-align: center;
+    background: mintcream;
 }
 .content form{
     margin: 20%;
+}
+.content h1{
+    color: grey;
+}
+#logo_operation{
+    height: 100px;
 }

@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block main %}
+    <div class="content">
+        <h1>Drawing processing service</h1>
+        <p>Resize the picture to 512x512</p>
+        <img src="{{ url_for('static', filename='img/logo_succes.png') }}" id="logo_operation">
+        <p>File is ready</p>
+        <button type="submit" class="btn btn-primary">Download</button>
+    </div>
+{% endblock %}
